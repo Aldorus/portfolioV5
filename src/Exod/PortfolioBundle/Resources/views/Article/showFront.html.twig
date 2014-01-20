@@ -1,0 +1,15 @@
+{% extends 'ExodPortfolioBundle::baseFront.html.twig' %}
+
+{% block body %}
+	{% for article in articles %}
+		{% if loop.index is divisibleby(2) %}
+			<div class="middleRight">
+		{% else %}
+			<div class="middleLeft">
+		{% endif %}
+		<strong>{{article.id}}</strong>, le {{ article.date|date('d/m/Y') }}
+		</div>
+	{% else %}
+		Pas (encore !) d'articles
+	{% endfor %}
+{% endblock %}

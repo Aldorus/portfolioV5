@@ -1,0 +1,38 @@
+Commentaire:
+  type: entity
+  table: commentaire
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    texte:
+      type: text
+      nullable: false
+    date:
+      type: date
+      nullable: false
+    auteur:
+      type: string
+      length: 90
+      fixed: false
+      nullable: false
+    email:
+      type: string
+      length: 120
+      fixed: false
+      nullable: false
+  oneToOne:
+    idarticle:
+      targetEntity: Article
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        idArticle:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

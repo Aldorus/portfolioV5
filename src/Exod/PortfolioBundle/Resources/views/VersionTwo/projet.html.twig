@@ -1,0 +1,154 @@
+{% extends 'ExodPortfolioBundle:Base:baseFront.html.twig' %}
+{% block body %}
+
+
+<!--BACKBONE-->
+<script type="text/template" id="com-item-template">
+	<div class="commentairesArticle">
+		<strong><time datetime="<%- time %>"><%- time %></time> - Par <span itemprop="name"><%- author %></span></strong>
+		<p><%- com %></p>
+	</div>
+</script>
+
+<script type="text/template" id="com-empty">
+	<div class="commentairesArticle" id="empty">
+		Aucun commentaire pour le moment, n'h&eacute;sitez pas &agrave; &ecirc;tre le premier
+	</div>
+</script>
+
+
+<div id="headerBar">
+	
+	
+	<div id="logo">
+		<a href="{{path('home')}}"><img src="{{asset('bundles/exodportfolio/images/logo.png')}}"/></a>	
+	</div>
+	
+	<div id="menuCenter">
+	
+		<a href="{{path('home')}}" id="menuHome" ><span>Accueil</span></a>
+		<a href="{{path('chooseCategories')}}" id="menuProjects" class="selectedProjects"><span>Projets</span></a>
+		<a href="{{path('informations')}}" id="menuInformations"><span>Informations</span></a>
+		<a href="{{ path('consulterCv') }}" id="menuCV"><span>CV</span></a>
+		<a href="{{ path('pageContact') }}" id="menuContacts"><span>Contacts</span></a>
+		
+		
+	</div>
+	
+</div>
+
+
+<div id="page">
+	
+	<article id="description" class="box boxProjet">
+		<h1 id="titreArticle">{{article.idprojet.label}}</h1>
+		<p>{% autoescape false %}{{article.idprojet.texte}}{%endautoescape%}</p>
+	</article>
+	
+	<article id="fini" class="box boxProjet">
+		<h1>Avancement</h1>
+		<p><div id="progressbar"></div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("#progressbar").progressbar({ value: {{article.idprojet.fini}} });
+			});
+		</script>
+		<br/>
+		{{article.idprojet.fini}}%
+		</p>
+	</article>
+	
+	{% if actualites is not empty %}
+	<article id="actualites" class="box boxProjet">
+		<h1>Actualit&eacute;s</h1>
+			{% for actualite in actualites|reverse  %}
+				<p><strong><time datetime="{{actualite.date|date('Y-m-d')}}">{{actualite.date|date('d/m/Y')}}</time> - Projet {{actualite.idarticle.label}}</strong>: {% autoescape false %}{{actualite.texte}}{%endautoescape%}</p>
+			{% endfor %}
+	</article>
+	{%endif%}
+	
+	<article id="finiBis" class="box boxProjet">
+		<h1>Avancement</h1>
+		<p><div id="progressbarBis"></div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("#progressbarBis").progressbar({ value: {{article.idprojet.fini}} });
+			});
+		</script>
+		<br/>
+		{{article.idprojet.fini}}%
+		</p>
+	</article>
+	
+	<article id="articleImage" class="box boxProjet">
+		<h1>Images</h1>
+		<p>	<a class="imagesGalerie" href="{{asset('bundles/exodportfolio/images/') }}{{article.idprojet.path}}" title="{{article.idprojet.label}}">
+				<img class="imageBordered" src="{{asset('bundles/exodportfolio/images/') }}{{article.idprojet.path}}" alt="{{article.idprojet.label}}"/>
+			</a>
+			{% for image in images if images is not empty %}
+				<a class="imagesGalerie" href="{{asset('bundles/exodportfolio/images/') }}{{image.path}}" title="{{image.nom}}">
+					<img class="imageBordered" src="{{asset('bundles/exodportfolio/images/') }}{{image.path}}" alt="{{image.nom}}"/>
+				</a>
+			{% endfor %}
+		</p>
+	</article>
+	
+	<div style="clear:both"></div>
+	
+	<article id="commentaireBlock" class="box boxProjet">
+		<h1>Commentaires</h1>
+			<div id="commentaireLigne">
+				{% if commentaires is not empty %}
+					{% for commentaire in commentaires  %}
+					<div class="commentairesArticle">
+						<strong><time datetime="{{commentaire.date|date('Y-m-d')}}">{{commentaire.date|date('d/m/Y')}}</time> - Par <span itemprop="name">{{commentaire.auteur}}</span></strong>
+						<p>{{commentaire.texte}}</p>
+					</div>
+					{% endfor %}
+				{% else %}
+					<div class="commentairesArticle" id="empty">
+						Aucun commentaire pour le moment, n'h&eacute;sitez pas &agrave; &ecirc;tre le premier
+					</div>
+				{% endif%}
+			</div>
+			<h1>Ajouter un commentaire</h1>
+			<p>{% include 'ExodPortfolioBundle:Include:champsCommentaire.html.twig' with {'idarticle' : article.id} %}</p>
+			
+	</article>
+	
+	<article id="partageArticle" class="box boxProjet">
+		<h1>Partager cet article</h1>
+		
+		<p><a href="https://twitter.com/share" class="twitter-share-button" data-url="{{ app.request.uri }}" data-lang="fr">Tweeter</a>
+		<iframe src="http://www.facebook.com/plugins/like.php?href={{ app.request.uri }}&layout=standard&show_faces=false&width=450&action=like&colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; width:100%; overflow: hidden;height:25px"></iframe>
+		<!-- Placez cette balise là où vous souhaitez positionner le bouton +1. -->
+		<g:plusone annotation="inline"></g:plusone>
+
+		<!-- Placez cet appel d'affichage à l'endroit approprié. -->
+		<script type="text/javascript">
+		  window.___gcfg = {lang: 'fr'};
+		
+		  (function() {
+		    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		    po.src = 'https://apis.google.com/js/plusone.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		  })();
+		</script>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		
+		</p>
+	</article>
+
+	{% if documents is not empty %}
+	<article id="documentArticle" class="box boxProjet">
+		<h1>Documents</h1>
+		{% for document in documents if documents is not empty%}
+			<p class="documentArticle">
+				Ajout&eacute; le <time datetime="{{document.date|date('Y-m-d')}}">{{document.date|date('d-m-Y')}}</time> : <a href="{{asset('bundles/exodportfolio/documents/') }}{{document.path}}">{{document.nom}}</a>
+			</p>
+		{% endfor %}
+	</article>
+	{% endif %}
+</div>
+
+{% endblock %}

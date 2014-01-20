@@ -1,0 +1,17 @@
+<div id="mainNav">
+<nav role="navigation">
+	<ul>
+		{% for categorie in categories if categories is not empty%}
+			{% if loop.first %}
+				<li style="position:absolute;top:50px;" id="elementMenuCourant"><a rel="home" href="{{path('home')}}">Home</a></li>
+				{% set multiple = (loop.index+1) * 50 %}
+				<li style="position:absolute;top:{{multiple}}px;" ><a href="{{path('homeByCategorie', {'idCategorie': categorie.id }) }}">{{categorie.title}}</a></li>	
+			{% else %}
+				{% set multiple = (loop.index+1) * 50 %}
+				<li style="position:absolute;top:{{multiple}}px;" ><a href="{{path('homeByCategorie', {'idCategorie': categorie.id }) }}">{{categorie.title}}</a></li>	
+			{% endif %}
+		{% endfor %}
+		
+	</ul>
+</nav>
+</div>

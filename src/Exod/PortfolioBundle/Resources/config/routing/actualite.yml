@@ -1,0 +1,30 @@
+actualite:
+    pattern:  /
+    defaults: { _controller: "ExodPortfolioBundle:Actualite:index" }
+
+actualite_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "ExodPortfolioBundle:Actualite:show" }
+
+actualite_new:
+    pattern:  /new
+    defaults: { _controller: "ExodPortfolioBundle:Actualite:new" }
+
+actualite_create:
+    pattern:  /create
+    defaults: { _controller: "ExodPortfolioBundle:Actualite:create" }
+    requirements: { _method: post }
+
+actualite_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "ExodPortfolioBundle:Actualite:edit" }
+
+actualite_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "ExodPortfolioBundle:Actualite:update" }
+    requirements: { _method: post }
+
+actualite_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "ExodPortfolioBundle:Actualite:delete" }
+    requirements: { _method: post }

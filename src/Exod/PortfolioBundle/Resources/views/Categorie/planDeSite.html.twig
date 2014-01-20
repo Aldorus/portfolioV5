@@ -1,0 +1,33 @@
+{% extends 'ExodPortfolioBundle::baseFront.html.twig' %}
+{% block body %}
+	{% include 'ExodPortfolioBundle:Include:profil.html.twig' with {'contenuProfil':contenuProfil} %}
+	
+	{% include 'ExodPortfolioBundle:Include:menu.html.twig' %}
+	
+	<div id="wrapMaster">
+		<div id="wrapSiteMap">
+		<div id="centerPage">
+		<h1 id="titreSiteMap">
+			Plan du site
+		</h1>
+		{% for categorie in categories %}
+			{% if loop.index%4==0 %}
+				<div style="clear:right"></div>
+			{% endif %}
+			<div class="floatCategorie">
+			
+			<h2>{{categorie.title}}</h2>
+			<p>
+			{% for projet in categorie.arrayProjets if categorie.arrayProjets is not empty %}
+				<a href="{{path('consulterProjet', { 'idProjet': projet.id } )}}" title="vers {{projet.label}}">{{projet.label}}</a>
+			{% endfor %}
+			</p>
+			
+			</div>
+			
+		{% endfor %}
+		</div>
+		</div>
+	</div>
+	<div style="clear:both"></div> 
+{% endblock %}

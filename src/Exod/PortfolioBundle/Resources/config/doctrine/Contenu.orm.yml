@@ -1,0 +1,26 @@
+Exod\PortfolioBundle\Entity\Contenu:
+  type: entity
+  table: contenu
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    idFonctionnel:
+      type: string
+      length: 70
+      fixed: false
+      nullable: false
+      column: id_fonctionnel
+    texte:
+      type: text
+      nullable: false
+    path:
+      type: string
+      length: 90
+      fixed: false
+      nullable: true
+  lifecycleCallbacks: {  }

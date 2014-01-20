@@ -1,0 +1,17 @@
+Exod\PortfolioBundle\Entity\Skill:
+  type: entity
+  table: skill
+  fields:
+    id:
+      type: integer
+      id: true
+      generator:
+        strategy: AUTO
+    label:
+      type: string
+      length: '200'
+    coef:
+      type: integer
+      unsigned: false
+      nullable: false	  
+  lifecycleCallbacks: {  }

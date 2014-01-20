@@ -1,0 +1,35 @@
+commentaire:
+    pattern:  /
+    defaults: { _controller: "ExodPortfolioBundle:Commentaire:index" }
+
+commentaire_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "ExodPortfolioBundle:Commentaire:show" }
+
+commentaire_new:
+    pattern:  /new
+    defaults: { _controller: "ExodPortfolioBundle:Commentaire:new" }
+
+commentaire_create:
+    pattern:  /create
+    defaults: { _controller: "ExodPortfolioBundle:Commentaire:create" }
+    requirements: { _method: post }
+
+commentaire_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "ExodPortfolioBundle:Commentaire:edit" }
+
+commentaire_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "ExodPortfolioBundle:Commentaire:update" }
+    requirements: { _method: post }
+
+commentaire_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "ExodPortfolioBundle:Commentaire:delete" }
+    requirements: { _method: post }
+    
+ajax_commentaire_new:
+    pattern: /ajaxnew
+    defaults: { _controller: "ExodPortfolioBundle:Commentaire:ajaxSubmitCommentaire" }
+    requirements: { _method: post }

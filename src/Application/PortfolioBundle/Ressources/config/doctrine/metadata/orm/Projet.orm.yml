@@ -1,0 +1,27 @@
+Projet:
+  type: entity
+  table: projet
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    label:
+      type: string
+      length: 90
+      fixed: false
+      nullable: false
+    texte:
+      type: text
+      nullable: false
+    date:
+      type: date
+      nullable: false
+    fini:
+      type: integer
+      unsigned: false
+      nullable: false
+  lifecycleCallbacks: {  }

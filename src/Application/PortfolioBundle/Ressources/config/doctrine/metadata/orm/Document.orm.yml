@@ -1,0 +1,35 @@
+Document:
+  type: entity
+  table: document
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    nom:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+    path:
+      type: string
+      length: 70
+      fixed: false
+      nullable: false
+    date:
+      type: date
+      nullable: false
+  oneToOne:
+    idprojet:
+      targetEntity: Projet
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        idProjet:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

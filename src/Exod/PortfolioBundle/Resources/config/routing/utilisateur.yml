@@ -1,0 +1,30 @@
+utilisateur:
+    pattern:  /
+    defaults: { _controller: "ExodPortfolioBundle:Utilisateur:index" }
+
+utilisateur_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "ExodPortfolioBundle:Utilisateur:show" }
+
+utilisateur_new:
+    pattern:  /new
+    defaults: { _controller: "ExodPortfolioBundle:Utilisateur:new" }
+
+utilisateur_create:
+    pattern:  /create
+    defaults: { _controller: "ExodPortfolioBundle:Utilisateur:create" }
+    requirements: { _method: post }
+
+utilisateur_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "ExodPortfolioBundle:Utilisateur:edit" }
+
+utilisateur_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "ExodPortfolioBundle:Utilisateur:update" }
+    requirements: { _method: post }
+
+utilisateur_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "ExodPortfolioBundle:Utilisateur:delete" }
+    requirements: { _method: post }

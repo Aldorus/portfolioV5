@@ -1,0 +1,17 @@
+<div id="output">
+</div>
+<form action="{{ path('ajax_commentaire_new') }}" novalidate>
+	<input type="hidden" name="idarticle" value="{{idarticle}}"/><br/>
+
+    <label for="nom">Nom <span class="aster">*</span> :</label> <br/>
+    <input class="champInput" name="nom" onblur="testChamp('nom')"/><br/>
+    
+    <label for="email">Email <span class="aster">*</span> :</label> <br/>
+    <input class="champInput" name="email" onblur="testChamp('email')"/><br/>
+    
+    <label for="message">Message <span class="aster">*</span> :</label><br/>
+    <textarea name="message" onblur="testChamp('message')"></textarea><br/>
+    
+    <input type="submit" name="" value="Valider" class="bouton"/>
+    <span id="output"></span>
+</form>

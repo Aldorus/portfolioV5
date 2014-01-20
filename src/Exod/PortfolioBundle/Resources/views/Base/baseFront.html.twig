@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="robots" content="index, follow" />
+		<meta name="keywords" content="PortFolio Roussel Guillaume Exod creation web developpement developper android iOS iphone LPCM liscence pro  Cergy SRC IUT Bobigny "/>
+		<meta name="author" content="Roussel Guillaume" />
+		<meta name="description" content="Le site web portfolio de Roussel Guillaume alias Exod, developpeur web et mobile" />
+
+        <title>Roussel Guillaume - D&eacute;veloppeur mobile et web</title>
+        
+        <link href="{{ asset('bundles/exodportfolio/images/favicon.ico') }}" rel="shortcut icon" type="image/x-icon" />
+        
+        <link rel="stylesheet" href="{{ asset('bundles/exodportfolio/css/smoothness/jquery-ui-1.8.19.custom.css') }}" type="text/css" media="screen" />
+        <link rel="stylesheet" href="{{ asset('bundles/exodportfolio/css/jquery.lightbox-0.5.css') }}" type="text/css" media="screen" />
+        <link rel="stylesheet" href="{{ asset('bundles/exodportfolio/css/jquery.mCustomScrollbar.css') }}" type="text/css" media="screen" />
+        <link rel="stylesheet" href="{{ asset('bundles/exodportfolio/css/styleFront.css') }}" type="text/css" />
+        
+        
+        <script src="{{ asset('bundles/exodportfolio/js/lib/jquery/jquery-1.7.2.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/exodportfolio/js/lib/jquery/ext/jquery-ui-1.8.19.custom.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/exodportfolio/js/lib/jquery/ext/jquery.lightbox-0.5.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/exodportfolio/js/lib/jquery/ext/jquery.color-2.1.2.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/exodportfolio/js/lib/jquery/ext/jquery.mousewheel.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/exodportfolio/js/lib/jquery/ext/jquery.mCustomScrollbar.js') }}" type="text/javascript"></script>
+        
+        <script src="{{ asset('bundles/exodportfolio/js/lib/globalize/globalize.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/exodportfolio/js/lib/charts/dx.chartjs.js') }}" type="text/javascript"></script>
+        
+        <script src="{{ asset('bundles/exodportfolio/js/utils.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/exodportfolio/js/validationFormulaireCommentaire.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/exodportfolio/js/validationFormulaireContact.js') }}" type="text/javascript"></script>
+         
+        <script type="text/javascript">
+        	$(document).ready(function() {
+		        $('.imagesGalerie').lightBox();
+		    });
+   
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-34592796-1']);
+			_gaq.push(['_setDomainName', 'rousselguillaume.fr']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+		
+    </head>
+    <body>
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>

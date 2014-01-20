@@ -1,0 +1,13 @@
+Exod\PortfolioBundle\Entity\Categorie:
+  type: entity
+  table: categorie
+  fields:
+    id:
+      type: integer
+      id: true
+      generator:
+        strategy: AUTO
+    title:
+      type: string
+      length: '200'
+  lifecycleCallbacks: {  }

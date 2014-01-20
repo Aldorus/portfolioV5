@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="robots" content="index, follow" />
+		<meta name="keywords" content="PortFolio Roussel Guillaume Exod creation web developpement developper android iOS iphone LPCM liscence pro  Cergy SRC IUT Bobigny "/>
+		<meta name="author" content="Roussel Guillaume" />
+		<meta name="description" content="Le site web portfolio de Roussel Guillaume alias Exod, developpeur web et mobile" />
+
+        <title>Roussel Guillaume - D&eacute;veloppeur web et mobile</title>
+        
+        <link href="{{ asset('bundles/exodportfolio/images/favicon.ico') }}" rel="shortcut icon" type="image/x-icon" />
+        
+        <link rel="stylesheet" href="{{ asset('bundles/exodportfolio/css/smoothness/jquery-ui-1.8.19.custom.css') }}" type="text/css" media="screen" />
+        <link rel="stylesheet" href="{{ asset('bundles/exodportfolio/css/jquery.lightbox-0.5.css') }}" type="text/css" media="screen" />
+        <link rel="stylesheet" href="{{ asset('bundles/exodportfolio/css/jquery.mCustomScrollbar.css') }}" type="text/css" media="screen" />
+        <link rel="stylesheet" href="{{ asset('bundles/exodportfolio/css/style.css') }}" type="text/css" media="screen and (min-device-width:500px)" />
+        <link rel="stylesheet" href="{{ asset('bundles/exodportfolio/css/styleMobile.css') }}" type="text/css" media="handheld, only screen and (max-device-width:500px), only screen and (max-width:500px), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5)" />
+        
+        <script src="{{ asset('bundles/exodportfolio/js/jquery-1.7.2.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/exodportfolio/js/jquery-ui-1.8.19.custom.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/exodportfolio/js/jquery.lightbox-0.5.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/exodportfolio/js/validationFormulaireCommentaire.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/exodportfolio/js/validationFormulaireContact.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/exodportfolio/js/utils.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/exodportfolio/js/jquery.mousewheel.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/exodportfolio/js/jquery.mCustomScrollbar.js') }}" type="text/javascript"></script>
+        
+        <script type="text/javascript">
+        	$(document).ready(function() {
+		        $('.imagesGalerie').lightBox();
+		    });
+        </script>
+        
+        <script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-25647384-1']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		
+		</script>
+    </head>
+    <body>
+
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>

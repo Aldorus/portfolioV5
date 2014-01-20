@@ -1,0 +1,123 @@
+homeAdmin:
+    pattern:  /admin
+    defaults: { _controller: "ExodPortfolioBundle:Home:indexAdmin" }
+
+home:
+    pattern:  /
+    defaults: { _controller: "ExodPortfolioBundle:Home:index" }
+    
+homeOld:
+    pattern:  /old
+    defaults: { _controller: "ExodPortfolioBundle:Home:indexOld" }    
+
+listAllCompetence:
+    pattern: /listAllSkills
+    defaults: { _controller: "ExodPortfolioBundle:Skill:listAll" }
+    
+homeByCategorie:
+    pattern:  /{idCategorie}/homeByCategorie
+    defaults: { _controller: "ExodPortfolioBundle:Home:byCategorie" }
+    
+chooseCategories:
+    pattern:  /chooseCategories
+    defaults: { _controller: "ExodPortfolioBundle:Home:chooseCategories" }
+
+informations:
+    pattern:  /informations
+    defaults: { _controller: "ExodPortfolioBundle:Home:informations" }
+    
+consulterProjetsEnCours:
+    pattern:  /consulterProjetsEnCours
+    defaults: { _controller: "ExodPortfolioBundle:Article:consulterEnCours" }
+       
+consulterProjetsTermines:
+    pattern:  /consulterProjetsTermines
+    defaults: { _controller: "ExodPortfolioBundle:Article:consulterTermines" }
+
+consulterArticles:
+    pattern:  /consulterArticles
+    defaults: { _controller: "ExodPortfolioBundle:Article:consulterArticles" }
+
+commentairesArticle:
+    pattern:  /commentairesArticle/{id}
+    defaults: { _controller: "ExodPortfolioBundle:Article:commentairesForArticle" }
+    
+consulterCv:
+    pattern:  /consulterCv
+    defaults: { _controller: "ExodPortfolioBundle:Contenu:CV" }
+    
+pageContact:
+    pattern:  /pageContact
+    defaults: { _controller: "ExodPortfolioBundle:Contenu:contact" }
+    
+pageContactOld:
+    pattern:  /pageContactOld
+    defaults: { _controller: "ExodPortfolioBundle:Contenu:contactOld" }
+    
+traitementMail:
+    pattern:  /traitementMail
+    defaults: { _controller: "ExodPortfolioBundle:Contenu:traitementMail" }    
+
+traitementMailOld:
+    pattern:  /traitementMailOld
+    defaults: { _controller: "ExodPortfolioBundle:Contenu:traitementMailOld" }    
+
+consulterProfil:
+    pattern:  /consulterProfil
+    defaults: { _controller: "ExodPortfolioBundle:Contenu:profil" }
+
+consulterArticle:
+    pattern:  /{id}/consulterArticle/
+    defaults: { _controller: "ExodPortfolioBundle:Article:getFrontArticleById" }
+    
+consulterProjet:
+    pattern:  /{idProjet}/consulterProjet/
+    defaults: { _controller: "ExodPortfolioBundle:Article:getFrontArticleByProjetId" }
+    
+consulterProjetOld:
+    pattern:  /{idProjet}/consulterProjetOld/
+    defaults: { _controller: "ExodPortfolioBundle:Article:getFrontArticleByProjetIdOld" }
+    
+planDeSite:
+    pattern: /siteMap
+    defaults: { _controller: "ExodPortfolioBundle:Categorie:planDeSite" }
+
+planDeSiteOld:
+    pattern: /siteMapOld
+    defaults: { _controller: "ExodPortfolioBundle:Categorie:planDeSiteOld" }
+    
+ExodAdminBundle_article_crud:
+    resource: "routing/article.yml"
+    prefix:   /admin/article
+    
+ExodAdminBundle_commentaire_crud:
+    resource: "routing/commentaire.yml"
+    prefix:   /admin/commentaire
+    
+ExodAdminBundle_contenu_crud:
+    resource: "routing/contenu.yml"
+    prefix:   /admin/contenu
+    
+ExodAdminBundle_document_crud:
+    resource: "routing/document.yml"
+    prefix:   /admin/document
+    
+ExodAdminBundle_image_crud:
+    resource: "routing/image.yml"
+    prefix:   /admin/image
+    
+ExodAdminBundle_projet_crud:
+    resource: "routing/projet.yml"
+    prefix:   /admin/projet
+
+ExodAdminBundle_utilisateur_crud:
+    resource: "routing/utilisateur.yml"
+    prefix:   /admin/utilisateur
+
+ExodAdminBundle_actualite_crud:
+    resource: "routing/actualite.yml"
+    prefix:   /admin/actualite
+    
+ExodAdminBundle_categorie_crud:
+    resource: "routing/categorie.yml"
+    prefix:   /admin/categorie

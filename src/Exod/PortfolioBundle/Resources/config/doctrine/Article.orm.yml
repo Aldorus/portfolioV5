@@ -1,0 +1,31 @@
+Exod\PortfolioBundle\Entity\Article:
+  type: entity
+  repositoryClass: Exod\PortfolioBundle\Repository\ArticleRepository
+  table: article
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    date:
+      type: date
+      nullable: false
+    label:
+      type: string
+      length: 90
+      fixed: false
+      nullable: false
+  oneToOne:
+    idprojet:
+      targetEntity: Projet
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        idProjet:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

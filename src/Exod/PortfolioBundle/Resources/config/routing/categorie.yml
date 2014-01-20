@@ -1,0 +1,30 @@
+categorie:
+    pattern:  /
+    defaults: { _controller: "ExodPortfolioBundle:Categorie:index" }
+
+categorie_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "ExodPortfolioBundle:Categorie:show" }
+
+categorie_new:
+    pattern:  /new
+    defaults: { _controller: "ExodPortfolioBundle:Categorie:new" }
+
+categorie_create:
+    pattern:  /create
+    defaults: { _controller: "ExodPortfolioBundle:Categorie:create" }
+    requirements: { _method: post }
+
+categorie_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "ExodPortfolioBundle:Categorie:edit" }
+
+categorie_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "ExodPortfolioBundle:Categorie:update" }
+    requirements: { _method: post }
+
+categorie_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "ExodPortfolioBundle:Categorie:delete" }
+    requirements: { _method: post }

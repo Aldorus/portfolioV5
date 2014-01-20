@@ -1,0 +1,44 @@
+Article:
+  type: entity
+  table: article
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    date:
+      type: date
+      nullable: false
+    label:
+      type: string
+      length: 90
+      fixed: false
+      nullable: false
+    alaune:
+      type: integer
+      unsigned: false
+      nullable: false
+      column: aLaUne
+  oneToOne:
+    idutilisateur:
+      targetEntity: Utilisateur
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        idUtilisateur:
+          referencedColumnName: id
+      orphanRemoval: false
+    idprojet:
+      targetEntity: Projet
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        idProjet:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

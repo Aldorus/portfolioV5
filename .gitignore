@@ -1,0 +1,10 @@
+assets/
+protected/runtime/
+themes/classic/views/
+app/
+bin/
+.buildpath
+deps
+deps.lock
+.project
+.settings

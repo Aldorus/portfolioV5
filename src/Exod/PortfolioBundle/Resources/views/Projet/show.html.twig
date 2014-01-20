@@ -1,0 +1,53 @@
+{% extends 'ExodPortfolioBundle::base.html.twig' %}
+{% block body %}
+<h1>Projet</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Label</th>
+            <td>{{ entity.label }}</td>
+        </tr>
+        <tr>
+            <th>Texte</th>
+            <td>{{ entity.texte }}</td>
+        </tr>
+        <tr>
+            <th>Date</th>
+            <td>{{ entity.date|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Fini</th>
+            <td>{{ entity.fini }}</td>
+        </tr>
+        <tr>
+            <th>Categorie</th>
+            <td>{{ entity.idcategorie }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('projet') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('projet_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('projet_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>
+{% endblock %}
+

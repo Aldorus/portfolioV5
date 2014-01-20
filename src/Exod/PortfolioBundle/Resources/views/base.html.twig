@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html id="head">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Exod - Portfolio</title>
+        
+        <link rel="stylesheet" href="{{ asset('style/style.css') }}" type="text/css" media="screen" />
+    </head>
+    <body>
+    <ul> 
+		<li><a href="{{ path('homeAdmin') }}">HOME</a></li>
+		<li><a href="{{ path('article') }}">Gestion des articles</a></li> 
+		<li><a href="{{ path('commentaire') }}">Gestion des commentaires</a></li>
+		<li><a href="{{ path('contenu') }}">Gestion des contenus</a></li>
+		<li><a href="{{ path('image') }}">Gestion des images</a></li>
+		<li><a href="{{ path('projet') }}">Gestion des projets</a></li>
+		<li><a href="{{ path('utilisateur') }}">Gestion des utilisateurs</a></li>
+		<li><a href="{{ path('actualite') }}">Gestion des actualit&eacute;s</a></li>
+		<li><a href="{{ path('categorie') }}">Gestion des cat&eacute;gories</a></li>
+		<li><a href="{{ path('document') }}">Gestion des documents</a></li>
+		<li><a href="/logout">Logout</a></li>
+	</ul>
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>

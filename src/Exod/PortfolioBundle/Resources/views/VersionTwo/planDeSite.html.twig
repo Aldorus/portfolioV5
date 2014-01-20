@@ -1,0 +1,55 @@
+{% extends 'ExodPortfolioBundle:Base:baseFront.html.twig' %}
+{% block body %}
+
+<div id="headerBar">
+	
+	
+	<div id="logo">
+		<a href="{{path('home')}}"><img src="{{asset('bundles/exodportfolio/images/logo.png')}}"/></a>	
+	</div>
+	
+	<div id="menuCenter">
+	
+		<a href="{{path('home')}}" id="menuHome" ><span>Accueil</span></a>
+		<a href="{{path('chooseCategories')}}" id="menuProjects"><span>Projets</span></a>
+		<a href="{{path('informations')}}" id="menuInformations"><span>Informations</span></a>
+		<a href="{{ path('consulterCv') }}" id="menuCV"><span>CV</span></a>
+		<a href="{{ path('pageContact') }}" id="menuContacts"><span>Contacts</span></a>
+		
+		
+	</div>
+	
+</div>
+
+
+<div id="page">
+	<div id="planSite" class="box">
+		<div id="wrapSiteMap">
+		<div id="centerPage">
+		<h1 id="titreSiteMap">
+			Plan du site
+		</h1>
+		{% for categorie in categories %}
+			{% if loop.index%4==0 %}
+				<div style="clear:right"></div>
+			{% endif %}
+			<div class="floatCategorie">
+			
+			<h2>{{categorie.title}}</h2>
+			<p>
+			{% for projet in categorie.arrayProjets if categorie.arrayProjets is not empty %}
+				<a href="{{path('consulterProjet', { 'idProjet': projet.id } )}}" title="vers {{projet.label}}">{{projet.label}}</a>
+				<br/>
+			{% endfor %}
+			</p>
+			
+			</div>
+			
+		{% endfor %}
+		</div>
+		</div>
+	</div>
+	<div style="clear:both"></div> 
+</div>
+
+{% endblock %}

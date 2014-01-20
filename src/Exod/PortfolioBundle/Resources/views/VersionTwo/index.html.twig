@@ -1,0 +1,108 @@
+{% extends 'ExodPortfolioBundle:Base:baseFront.html.twig' %}
+{% block body %}
+
+<div id="headerBar">
+	
+	
+	<div id="logo">
+		<a href="{{path('home')}}"><img src="{{asset('bundles/exodportfolio/images/logo.png')}}"/></a>	
+	</div>
+	
+	<div id="menuCenter">
+	
+		<a href="{{path('home')}}" id="menuHome" class="selectedHome"><span>Accueil</span></a>
+		<a href="{{path('chooseCategories')}}" id="menuProjects"><span>Projets</span></a>
+		<a href="{{path('informations')}}" id="menuInformations"><span>Informations</span></a>
+		<a href="{{ path('consulterCv') }}" id="menuCV"><span>CV</span></a>
+		<a href="{{ path('pageContact') }}" id="menuContacts"><span>Contacts</span></a>
+		
+		
+	</div>
+	
+</div>
+
+<div id="page">
+
+	<article id="presentation" class="box">
+		<h1>Roussel Guillaume</h1>
+		<p>{% autoescape false %}{%if contenuProfil is not empty%}{{contenuProfil.texte}}{%endif%}{%endautoescape%}</p>
+	</article>
+	
+	<article id="actualite" class="box">
+		<h1>Actualit&eacute;s</h1>
+		{% for actualite in lastActualites if lastActualites is not empty %}
+			<p style="border:0;">
+				<a href="{{path('consulterProjet', { 'idProjet': actualite.idarticle.idprojet.id } )}}"><strong><time datetime="{{actualite.date|date('Y-m-d')}}">{{actualite.date|date('d/m/Y')}}</time> - Projet {{actualite.idarticle.label}}</strong></a> :  {% autoescape false %}{{actualite.texte}}{%endautoescape%}
+			</p>
+			
+		{% endfor %}
+	</article>
+	
+	<article id="competence" class="box">
+		<h1>Comp&eacute;tences</h1>
+		<div id="chartContainer"></div>
+	</article>
+	
+	<article id="contact" class="box">
+		<div id="listContact">
+			<h1>Contacts</h1>
+			<a href="http://about.me/rousselguillaume"><img src="{{asset('bundles/exodportfolio/images/icone_aboutme.png')}}" alt="icone about me"/>
+				<span>About me</span>
+			</a><br/>
+			<a href="http://fr.linkedin.com/pub/guillaume-roussel/3b/351/b7b"><img src="{{asset('bundles/exodportfolio/images/icone_linkedin.png') }}" alt="icone linkedin"/>
+				<span>Linkedin</span>
+			</a><br/>
+			<a href="http://www.viadeo.com/fr/profile/guillaume.roussel1394"><img src="{{asset('bundles/exodportfolio/images/icone_viadeo.png') }}" alt="icone viadeo"/>
+				<span>Viadeo</span>
+			</a><br/>
+			<a href="https://twitter.com/#!/RG_exod"><img src="{{asset('bundles/exodportfolio/images/icone_tweeter.png')}}" alt="icone tweeter"/>
+				<span>Twitter</span>
+			</a><br/>
+			<a href="http://www.facebook.com/people/Guillaume-Roussel/1185898373"><img src="{{asset('bundles/exodportfolio/images/icone_fb.png')}}" alt="icone facebook"/>
+				<span>Facebook</span>
+			</a><br/>
+			<a href="https://plus.google.com/u/0/111719416459197719190/posts"><img src="{{asset('bundles/exodportfolio/images/icone_gp.png')}}" alt="icone google +"/>
+				<span>Google plus</span>
+			</a>
+		</div>
+		<a id="clickContact" href="{{ path('pageContact') }}"><table id="clickContactTable" >
+			<tr>
+				<td>Contactez moi</td>
+			</tr>
+		</table></a>
+	</article>
+	
+	<article id="actualiteTwo" class="box">
+		<h1>Actualit&eacute;s</h1>
+		{% for actualite in lastActualites if lastActualites is not empty %}
+			<p style="border:0;">
+				<a href="{{path('consulterProjet', { 'idProjet': actualite.idarticle.idprojet.id } )}}"><strong><time datetime="{{actualite.date|date('Y-m-d')}}">{{actualite.date|date('d/m/Y')}}</time> - Projet {{actualite.idarticle.label}}</strong></a> :  {% autoescape false %}{{actualite.texte}}{%endautoescape%}
+			</p>
+			
+		{% endfor %}
+	</article>
+	
+	<article id="twitter" class="box">
+		<h1>Twitter</h1>
+		<p>{% autoescape false %}{%if contenuProfil is not empty%}{{contenuProfil.texte}}{%endif%}{%endautoescape%}</p>
+	</article>
+	
+	<div style="clear:both"></div>
+	{% for projet in projets if projets is not empty %}
+	
+		<article class="box projet">
+			<h1><a href="{{path('consulterProjet', { 'idProjet': projet.id } )}}">{{projet.label}}</a></h1>
+			<time datetime="{{projet.date|date('Y-m-d')}}">{{projet.date|date('d/m/Y')}}</time>
+			<p>{% autoescape false %}{%if projet is not empty%}{{projet.texte}}{%endif%}{%endautoescape%}</p>
+		</article>
+	
+	
+	{%endfor%}
+	
+	<span id="footer">
+		D&eacute;velopp&eacute; par Roussel Guillaume | <a href="{{ path('pageContact') }}">Contact</a> | <a href="{{ path('planDeSite') }}">Plan du site</a>
+	</span>
+</div>
+
+<div style="clear:both"></div>
+{% endblock %}

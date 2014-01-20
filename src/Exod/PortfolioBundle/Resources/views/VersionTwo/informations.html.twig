@@ -1,0 +1,38 @@
+{% extends 'ExodPortfolioBundle:Base:baseFront.html.twig' %}
+{% block body %}
+
+<div id="headerBar">
+	
+	
+	<div id="logo">
+		<a href="{{path('home')}}"><img src="{{asset('bundles/exodportfolio/images/logo.png')}}"/></a>	
+	</div>
+	
+	<div id="menuCenter">
+	
+		<a href="{{path('home')}}" id="menuHome" ><span>Accueil</span></a>
+		<a href="{{path('chooseCategories')}}" id="menuProjects" ><span>Projets</span></a>
+		<a href="{{path('informations')}}" id="menuInformations" class="selectedInformations"><span>Informations</span></a>
+		<a href="{{ path('consulterCv') }}" id="menuCV"><span>CV</span></a>
+		<a href="{{ path('pageContact') }}" id="menuContacts"><span>Contacts</span></a>
+		
+		
+	</div>
+	
+</div>
+
+
+<div id="page">
+
+	<article class="box informationBox">
+		<h1>Roussel Guillaume</h1>
+		<p>{% autoescape false %}{%if contenuProfil is not empty%}{{contenuProfil.texte}}{%endif%}{%endautoescape%}</p>
+	</article>
+	
+	<article class="box informationBox">
+		{% autoescape false %}{%if contenuSearch is not empty%}{{contenuSearch.texte}}{%endif%}{%endautoescape%}
+	</article>
+</div>
+
+<div style="clear:both"></div>
+{% endblock %}

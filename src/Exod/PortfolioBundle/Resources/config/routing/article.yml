@@ -1,0 +1,30 @@
+article:
+    pattern:  /
+    defaults: { _controller: "ExodPortfolioBundle:Article:index" }
+
+article_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "ExodPortfolioBundle:Article:show" }
+
+article_new:
+    pattern:  /new
+    defaults: { _controller: "ExodPortfolioBundle:Article:new" }
+
+article_create:
+    pattern:  /create
+    defaults: { _controller: "ExodPortfolioBundle:Article:create" }
+    requirements: { _method: post }
+
+article_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "ExodPortfolioBundle:Article:edit" }
+
+article_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "ExodPortfolioBundle:Article:update" }
+    requirements: { _method: post }
+
+article_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "ExodPortfolioBundle:Article:delete" }
+    requirements: { _method: post }

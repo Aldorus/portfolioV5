@@ -1,0 +1,52 @@
+{% extends 'ExodPortfolioBundle:Base:baseFront.html.twig' %}
+{% block body %}
+
+<div id="headerBar">
+	
+	
+	<div id="logo">
+		<a href="{{path('home')}}"><img src="{{asset('bundles/exodportfolio/images/logo.png')}}"/></a>	
+	</div>
+	
+	<div id="menuCenter">
+	
+		<a href="{{path('home')}}" id="menuHome" ><span>Accueil</span></a>
+		<a href="{{path('chooseCategories')}}" id="menuProjects" class="selectedProjects"><span>Projets</span></a>
+		<a href="{{path('informations')}}" id="menuInformations"><span>Informations</span></a>
+		<a href="{{ path('consulterCv') }}" id="menuCV"><span>CV</span></a>
+		<a href="{{ path('pageContact') }}" id="menuContacts"><span>Contacts</span></a>
+		
+		
+	</div>
+	
+</div>
+
+
+<div id="page">
+	<div id="chooser" class="box">
+		{% for categorie in categories if categories is not empty %}
+			<div class="categorie">
+				
+			<input 
+				type="checkbox" 
+				name="{{categorie.id}}" 
+				value="{{categorie.id}}"
+				checked="checked"
+				onclick="checkCategorie(this,false)"  >
+				<span onclick="checkCategorie(this,true)" class="handHover">
+				 {{categorie.title}}
+				</span>
+			</div>
+		{% endfor %}
+	</div>
+	
+	{% for projet in projets if projets is not empty %}
+		<article class="box littreProjet categorie{{ projet.idcategorie.id}}">
+			<h1><a href="{{path('consulterProjet', { 'idProjet': projet.id } )}}">{{projet.label}}</a></h1>
+			<p>{% autoescape false %}{{projet.texte }}{%endautoescape%}</p>
+		</article>
+	{% endfor %}
+</div>
+
+<div style="clear:both"></div>
+{% endblock %}

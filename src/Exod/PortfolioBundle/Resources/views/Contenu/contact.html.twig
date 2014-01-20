@@ -1,0 +1,45 @@
+{% extends 'ExodPortfolioBundle::baseFront.html.twig' %}
+{% block body %}
+	{% include 'ExodPortfolioBundle:Include:profil.html.twig' with {'contenuProfil':contenuProfil} %}
+	
+	{% include 'ExodPortfolioBundle:Include:menu.html.twig' %}
+	
+	<div id="wrapMaster">
+		<div id="rightSection">			
+			{% include 'ExodPortfolioBundle:Include:tweet.html.twig' %}
+		</div>
+		
+		<div id="wrap">	
+			<div id="formulaireContact" class="backgroundContentWrap">
+				<h1>Me Contacter</h1>
+				<div>{% if message is defined %}
+						{{ message }}
+				{% endif %}</div>
+				<form action="{{ path('traitementMail') }}" name="formulaireContact" method="post">
+			        <label for="nom">Nom <span class="aster">*</span> :</label> <input class="champInput" name="nom" onblur="testChampContact('nom')"/>
+				    <label for="email">Email <span class="aster">*</span> :</label> <input class="champInput" name="email" onblur="testChampContact('email')"/><br/>
+				    <label for="message">Message <span class="aster">*</span> :</label> <textarea name="message" onblur="testChampContact('message')"></textarea><br/>
+			        <input type="submit" name="" value="Envoyer le mail" class="bouton"/>
+				</form>
+			</div>
+		</div>
+		
+		<div id="projetsFinis">
+			<h1>Projets Finis</h1>
+			<section>
+			{% for projet in projetsFinis if projetsFinis is not empty %}
+				<article>
+					<a href="{{path('consulterProjet', { 'idProjet': projet.id } )}}" title="vers {{projet.label}}" >
+						<img src="{{asset('bundles/exodportfolio/images/') }}{{projet.path}}" alt="{{projet.label}}"/>
+					</a>
+					<br/>
+					<h2>
+						<a class="whiteLink" href="{{path('consulterProjet', { 'idProjet': projet.id } )}}" title="vers {{projet.label}}">{{projet.label}}</a>
+					</h2>
+				</article>
+			{% endfor %}
+			</section>
+		</div>
+	</div>
+	<div style="clear:both"></div>
+{% endblock %}

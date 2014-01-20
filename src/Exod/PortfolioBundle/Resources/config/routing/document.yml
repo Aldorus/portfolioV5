@@ -1,0 +1,30 @@
+document:
+    pattern:  /
+    defaults: { _controller: "ExodPortfolioBundle:Document:index" }
+
+document_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "ExodPortfolioBundle:Document:show" }
+
+document_new:
+    pattern:  /new
+    defaults: { _controller: "ExodPortfolioBundle:Document:new" }
+
+document_create:
+    pattern:  /create
+    defaults: { _controller: "ExodPortfolioBundle:Document:create" }
+    requirements: { _method: post }
+
+document_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "ExodPortfolioBundle:Document:edit" }
+
+document_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "ExodPortfolioBundle:Document:update" }
+    requirements: { _method: post }
+
+document_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "ExodPortfolioBundle:Document:delete" }
+    requirements: { _method: post }

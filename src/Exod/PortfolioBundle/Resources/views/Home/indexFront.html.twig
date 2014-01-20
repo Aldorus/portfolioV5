@@ -1,0 +1,67 @@
+{% extends 'ExodPortfolioBundle::baseFront.html.twig' %}
+{% block body %}
+	{% include 'ExodPortfolioBundle:Include:profil.html.twig' with {'contenuProfil':contenuProfil} %}
+	
+	{% include 'ExodPortfolioBundle:Include:menu.html.twig' with {'categories':categories} %}
+	
+	<div id="wrapMaster">
+		<div id="rightSection">
+			
+			
+			{% include 'ExodPortfolioBundle:Include:tweet.html.twig' with {'lastTweets' : lastTweets} %}
+			
+		</div>
+		
+		<div id="wrap">	
+			<div id="projetsEnCours" class="backgroundContentWrap">
+				<h1>Projets en cours</h1>
+				<section>
+				{% for projet in projetsNonFinis if projetsNonFinis is not empty %}
+					<article>
+						<a href="{{path('consulterProjet', { 'idProjet': projet.id } )}}" title="vers {{projet.label}}">
+							<img src="{{asset('bundles/exodportfolio/images/') }}{{projet.path}}" alt="{{projet.label}}"/>
+						</a>
+						<br/>
+						<h2>
+							<a href="{{path('consulterProjet', { 'idProjet': projet.id } )}}" title="vers {{projet.label}}">{{projet.label}}</a>
+						</h2>
+					</article>
+				{% endfor %}
+				</section>  
+			</div> 
+			
+			<div id="derniereInfo" class="backgroundContentWrap">
+				<h1>Derni&egrave;res informations</h1>
+				{%if lastActualites is not empty %}
+					{% for actualite in lastActualites %}
+					<article>
+						{% if loop.last %}
+							<p style="border:0;"><a href="{{path('consulterArticle', { 'id': actualite.idarticle.id } )}}"><strong><time datetime="{{actualite.date|date('Y-m-d')}}">{{actualite.date|date('d-m-Y')}}</time> - Pour le projet {{actualite.idarticle.label}}</strong></a> :  {% autoescape false %}{{actualite.texte}}{%endautoescape%}</p>
+						{% else %}
+							<p><a href="{{path('consulterArticle', { 'id': actualite.idarticle.id } )}}"><strong><time datetime="{{actualite.date|date('Y-m-d')}}">{{actualite.date|date('d-m-Y')}}</time> - Pour le projet {{actualite.idarticle.label}}</strong></a> : {% autoescape false %}{{actualite.texte}}{%endautoescape%}</p>
+						{% endif %}
+					</article>
+					{% endfor %}
+				{%endif%}
+			</div> 
+		</div>
+		
+		<div id="projetsFinis">
+			<h1>Projets Finis</h1>
+			<section>
+			{% for projet in projetsFinis if projetsFinis is not empty %}
+				<article>
+					<a href="{{path('consulterProjet', { 'idProjet': projet.id } )}}" title="vers {{projet.label}}" >
+						<img src="{{asset('bundles/exodportfolio/images/') }}{{projet.path}}" alt="{{projet.label}}"/>
+					</a>
+					<br/>
+					<h2>
+						<a class="whiteLink" href="{{path('consulterProjet', { 'idProjet': projet.id } )}}" title="vers {{projet.label}}">{{projet.label}}</a>
+					</h2>
+				</article>
+			{% endfor %}
+			</section>
+		</div>
+	</div>
+	<div style="clear:both"></div>
+{% endblock %}

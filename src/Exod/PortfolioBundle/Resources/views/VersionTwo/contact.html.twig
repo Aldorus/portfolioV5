@@ -1,0 +1,71 @@
+{% extends 'ExodPortfolioBundle:Base:baseFront.html.twig' %}
+{% block body %}
+
+<div id="headerBar">
+	
+	
+	<div id="logo">
+		<a href="{{path('home')}}"><img src="{{asset('bundles/exodportfolio/images/logo.png')}}"/></a>	
+	</div>
+	
+	<div id="menuCenter">
+	
+		<a href="{{path('home')}}" id="menuHome"><span>Accueil</span></a>
+		<a href="{{path('chooseCategories')}}" id="menuProjects"><span>Projets</span></a>
+		<a href="{{path('informations')}}" id="menuInformations"><span>Informations</span></a>
+		<a href="{{ path('consulterCv') }}" id="menuCV"><span>CV</span></a>
+		<a href="{{ path('pageContact') }}" class="selectedContacts" id="menuContacts"><span>Contacts</span></a>
+		
+		
+	</div>
+	
+</div>
+
+<div id="page">
+	<div id="formulaireContact" class="box">
+		<h1>Me Contacter</h1>
+		<div>{% if message is defined %}
+				{{ message.texte }}
+		{% endif %}</div><br/>
+		<div id="messageContact">{% if messageRetour is defined %}
+				{% autoescape false %}{{ messageRetour }}{%endautoescape%}
+		{% endif %}</div>
+		<br/>
+		<form action="{{ path('traitementMail') }}" name="formulaireContact" method="post" onsubmit="return validationContact()">
+	        <label for="nom">Nom <span class="aster">*</span> :</label> <input class="champInput" name="nom" onblur="testChampContact('nom')"/>
+		    <label for="email">Email <span class="aster">*</span> :</label> <input class="champInput" name="email" onblur="testChampContact('email')"/><br/>
+		    <br/>
+		    <label for="message">Message <span class="aster">*</span> :</label> <textarea name="message" onblur="testChampContact('message')"></textarea><br/>
+		    <br/>
+	        <input type="submit" name="" value="Envoyer le mail" id="sendMail" />
+		</form>
+	</div>
+
+	<div id="reseauxSociaux" class="box">
+		<h1>R&eacute;seaux Sociaux</h1>
+		<p>
+			<a href="http://about.me/rousselguillaume"><img src="{{asset('bundles/exodportfolio/images/icone_aboutme.png')}}" alt="icone about me"/>
+				<span>About me</span>
+			</a><br/>
+			<a href="http://fr.linkedin.com/pub/guillaume-roussel/3b/351/b7b"><img src="{{asset('bundles/exodportfolio/images/icone_linkedin.png') }}" alt="icone linkedin"/>
+				<span>Linkedin</span>
+			</a><br/>
+			<a href="http://www.viadeo.com/fr/profile/guillaume.roussel1394"><img src="{{asset('bundles/exodportfolio/images/icone_viadeo.png') }}" alt="icone viadeo"/>
+				<span>Viadeo</span>
+			</a><br/>
+			<a href="https://twitter.com/#!/RG_exod"><img src="{{asset('bundles/exodportfolio/images/icone_tweeter.png')}}" alt="icone tweeter"/>
+				<span>Twitter</span>
+			</a><br/>
+			<a href="http://www.facebook.com/people/Guillaume-Roussel/1185898373"><img src="{{asset('bundles/exodportfolio/images/icone_fb.png')}}" alt="icone facebook"/>
+				<span>Facebook</span>
+			</a><br/>
+			<a href="https://plus.google.com/u/0/111719416459197719190/posts"><img src="{{asset('bundles/exodportfolio/images/icone_gp.png')}}" alt="icone google +"/>
+				<span>Google plus</span>
+			</a>
+		</p>
+	</div>
+</div>
+
+
+<div style="clear:both"></div>
+{% endblock %}

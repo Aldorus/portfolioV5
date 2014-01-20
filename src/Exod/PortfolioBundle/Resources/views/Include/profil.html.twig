@@ -1,0 +1,24 @@
+<section id="leftSection">
+	<p id="pImage">
+		<a href="{{path('home')}}">
+			<img src="{{asset('bundles/exodportfolio/images/logo.png')}}" alt="logo du site"/>
+		</a>
+	</p>
+	<article id="articleProfil">
+		<h1>Profil</h1>
+		<p>{% autoescape false %}{%if contenuProfil is not empty%}{{contenuProfil.texte}}{%endif%}{%endautoescape%}</p>
+	</article>
+	<div class="link">
+		<article >
+			<h1><a href="http://cv.rousselguillaume.fr">Mon C.V.</a></h1>
+		</article>
+		<article>
+			<h1><a href="{{ path('pageContact') }}">Me Contacter</a></h1>
+		</article>
+	</div>
+	<div class="planSite">
+		<a id="planDeSite" href="{{ path('planDeSite') }}">Plan du site</a><br/><br/>
+		Copyright 2012 - R&eacute;alis&eacute; par<br/>
+		Guillaume Roussel. 
+	</div>
+</section>
