@@ -121,3 +121,7 @@ ExodAdminBundle_actualite_crud:
 ExodAdminBundle_categorie_crud:
     resource: "routing/categorie.yml"
     prefix:   /admin/categorie
+    
+ExodAdminBundle_skill_crud:
+    resource: "routing/skill.yml"
+    prefix:   /admin/skill

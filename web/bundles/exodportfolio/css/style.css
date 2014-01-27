@@ -1,0 +1,511 @@
+@CHARSET "ISO-8859-1";
+
+*{
+	margin:0px;
+	padding:0px;		
+}
+
+strong{
+	font-weight: bold;	
+}
+
+html{
+	height:1000px;
+}
+
+body {
+/*	background-color:#663f70;*/
+/* 	background-color:#d6d6d6; */
+	background-color:#FFF;
+	width:100%;
+	height:1000px;
+	min-width:950px;
+/* 	height:1000px; */
+	font-family: Arial,Century Gothic;
+	font-size: 12px;
+	color:black;
+/*	border:1px solid black;*/
+/*	overflow: hidden;*/
+}
+
+a{
+	color: rgb(102, 63, 112);
+	text-decoration:none;
+	font-weight:bold;
+}
+
+h2 a {
+color:black;
+}
+
+p a:hover,h1 a:hover{
+	text-decoration: underline;	
+}
+
+#leftSection{
+	background-color:white;
+	float:left;
+	min-width:150px;
+	width:17.5%;
+	height:100%;
+	position: relative;
+}
+#leftSection #pImage{
+	text-align: center;
+}
+
+#leftSection h1{
+	font-size: 14px;
+	text-decoration: none;
+	margin:7px;
+	margin-top:15px;
+}
+
+#leftSection .planSite{
+	margin:7px;
+	margin-top:15px;
+	position: absolute;
+	bottom: 0;
+}
+
+#leftSection h1 a:hover{
+	text-decoration: underline;
+}
+#leftSection h1 a:hover{
+	text-decoration: underline;
+}
+
+#articleProfil h1{
+	font-size: 18px;	
+	text-decoration: none;
+	margin:7px;
+}
+
+#articleProfil p{
+	margin:7px;
+	margin-top:15px;	
+}
+
+#mainNav{
+	display:block;
+	height:100%;
+	min-width:80px;
+	width:7.5%;
+/*	background: url('../images/backgroundMenu.png');*/
+	background-image: url('images/menu_01.png'), url('images/menu_02.png'), url('images/menu_03.png');
+	background-position: left, 38px 0px, right;
+	background-repeat: repeat-y,repeat,repeat-y;
+	float:left;	
+}
+
+#mainNav ul{
+	list-style-image: none;
+	list-style: none;
+	margin-left:5px;
+	margin-top:130px;
+	color:white;
+	position:relative;
+}
+
+#mainNav ul li{
+	font-weight: bold;
+	display: inline-block;
+	width:100%;
+}
+
+#mainNav ul li a{
+	color:white;
+	display: inline-block;
+	width:100%;
+	text-decoration: none;	
+/*	transition:all 0.2s;*/
+/*	-moz-transition:all 0.2s;*/
+/*	-webkit-transition:all 0.2s;*/
+/*	-o-transition:all 0.2s;*/
+}
+
+#mainNav ul li a:hover{
+	position:relative;
+	bottom:2px;
+	font-size: 16px;	
+}
+
+#wrapMaster{
+	height:100%;
+	margin-left:25%;
+	position:relative;
+	right:1px;	
+	min-width: 470px;
+	width: 75%;
+}
+
+
+
+#rightSection{
+	float:right;
+	background-color:white;
+	min-width:200px;
+	width:33.3%;
+	height:750px;
+}
+
+#rightSection p{
+	margin:25px;
+	position: relative;
+	bottom: 15px;
+}
+#rightSection p img{
+	position: relative;
+	top: 10px;
+}
+
+#rightSection h1{
+	margin-left:25px;
+}
+
+#rightSection section article h1{
+	margin-top:25px;
+}
+
+#rightSection section article p{
+	padding-bottom:25px;
+	
+}
+
+.borderGreen{
+	border-bottom: 1px solid #49a837;
+}
+
+.borderPurple{
+	border-bottom: 1px solid #663f70;
+}
+
+#rightSection section article p a{
+	text-decoration: underline;
+}
+
+#wrap{
+	height:750px;
+/*	min-width:600px;*/
+	width:66.8%;
+	background-image:url('images/backgroundWrap.png');
+/*	background-repeat:no-repeat;*/
+}
+
+.backgroundContentWrap{
+	background-color:rgba(255,255,255,0.8);
+}
+
+#projetsEnCours{
+	width:100%;
+	position:relative;
+	top:10%;
+	height:30%;
+}
+
+#projetsEnCours h1{
+	padding:5px;
+	padding-left:50px;	
+	background-image: url("images/puceVerte.png");
+	background-repeat: no-repeat;
+	background-position: 20px 17px;
+}
+
+#projetsEnCours section{
+	height:180px;
+	overflow: hidden;	
+}
+
+#projetsEnCours article{
+	float:left;
+	margin-top:15px;
+/*	margin:12px;*/
+	margin-left:3%;
+/*	margin-right:2%;*/
+	text-align: center;
+}
+
+#projetsEnCours article h2{
+	font-size: 16px;
+	font-weight: normal;	
+}
+
+#projetsEnCours article img,.imageBordered{
+	margin-top:3px;
+	width:110px;
+	padding:10px;
+	background-color:rgba(60,60,60,0.3);
+	border-radius:5px;	
+	transition: background-color 1s;
+	-moz-transition: background-color 1s; 
+	-webkit-transition: background-color 1s; 
+	-o-transition: background-color 1s;
+}
+
+#projetsEnCours article img:hover,.imageBordered:hover{
+	background-color:rgba(60,60,60,0.8);
+}
+
+#formulaireContact,#formulaireCommentaire{
+	width:100%;
+	position:relative;
+	top:10%;
+	height:30%;
+}
+#formulaireContact h1,#formulaireCommentaire h1{
+	padding:5px;
+	padding-left:50px;	
+	background-image: url("images/puceVerte.png");
+	background-repeat: no-repeat;
+	background-position: 20px 17px;
+	margin-bottom:0px;
+}
+
+#formulaireContact form,#formulaireCommentaire form{
+	width:95%;
+	display: block;
+}
+#formulaireContact .champInput, #formulaireContact label,#formulaireCommentaire .champInput,#formulaireCommentaire label{
+	display:inline-block;
+	margin-top:10px;
+}
+#formulaireContact label,#formulaireCommentaire label{
+	width:13%;
+	margin-right:2.5%;
+	text-align:right;
+		
+}
+#formulaireContact .champInput,#formulaireCommentaire .champInput{
+	width:32%;
+}
+#formulaireContact textarea,#formulaireCommentaire textarea{
+	margin-top:10px;
+	width:80%;
+	height: 78px;
+}
+
+
+
+#derniereInfo{
+/*	height:40%;*/
+	width:100%;
+	padding-bottom: 20px;
+	position:relative;
+	top:20%;	
+}
+#derniereInfo h1{
+	padding:5px;
+	padding-left:50px;
+	background-image: url("images/puceViolette.png");
+	background-repeat: no-repeat;
+	background-position: 20px 17px;	
+	margin-bottom: 25px;
+}
+#derniereInfo p{
+	margin-left:70px;
+	margin-right:20px;
+	padding-left:20px;
+	padding-bottom:20px;
+	margin-top:20px;
+	margin-bottom:20px;
+	min-width:300px;
+	border-bottom:1px solid black;	
+}
+	
+#projetsFinis{
+	background-color: black;
+	padding-left:2px;
+	padding-top:1px;
+	width:100%;
+	height:25%;
+}#projetsFinis h1{
+	color:white;
+	padding:5px;
+	padding-left:50px;	
+}
+#projetsFinis p{
+	color:white;
+}
+
+#projetsFinis section{
+	height:210px;
+	overflow: hidden;	
+}
+
+#projetsFinis article{
+	float:left;
+	margin-top:5px;
+/*	margin:12px;*/
+	margin-left:2%;
+/*	margin-right:2%;*/
+	text-align: center;
+}
+
+#projetsFinis article h2{
+	font-size: 16px;
+	font-weight: normal;
+	color:white;	
+}
+
+#projetsFinis article img{
+	margin-top:3px;
+	width:60px;
+	padding:7px;
+	background-color:rgba(210,210,210,0.3);
+	border-radius:5px;	
+	transition: background-color 1s;
+	-moz-transition: background-color 1s; 
+	-webkit-transition: background-color 1s; 
+	-o-transition: background-color 1s;
+}
+
+#projetsFinis article img:hover{
+	background-color:rgba(60,60,60,0.8);
+}
+
+.bouton{
+	border: 1px solid lightGrey;
+	background: #E6E6E6 url(images/?new=e6e6e6&w=1&h=400&f=png&q=100&fltr[]=over|textures/02_glass.png|0|0|75) 50% 50% repeat-x;
+	font-weight: normal;
+	color: #555;
+	padding: .4em 1em;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	float:right;
+}
+.bouton:hover{
+	border: 1px solid #999;
+	background: #DADADA url(images/?new=dadada&w=1&h=400&f=png&q=100&fltr[]=over|textures/02_glass.png|0|0|75) 50% 50% repeat-x;
+	font-weight: normal;
+	color: #212121;
+}
+
+.alignRight{
+	text-align: right;
+}
+
+#wrapArticle{
+	width:100%;
+	background-color:white;
+	height:1000px;	
+	display: block;
+}
+
+#floatRightArticle{
+	background-color:white;
+	width:25%;
+	float:right;
+	height:100%;
+	overflow: hidden;
+	padding-right:10px;
+}
+#floatRightArticle #fini{
+	padding-top:25px;
+}
+#floatRightArticle #fini h1{
+	margin-bottom:10px;
+}
+
+#floatRightArticle article p{
+	margin-bottom:15px;
+}
+#documentArticle{
+/*	position:fixed;*/
+	margin-top: 25px;
+}
+
+#centerArticle{
+	width:70%;
+	padding:15px;
+	text-align: justify;
+	height:970px;
+/* 	overflow:auto; */
+
+}
+
+
+#centerArticle h1{
+	margin-top:25px;
+	
+}
+
+#titreArticle{
+	padding-left:50px;
+	background-image: url("images/puceVerte.png");
+	background-repeat: no-repeat;
+	background-position: 20px 12px;
+	font-size: 2em;	
+}
+
+#centerArticle article p{
+	margin-left:10px;
+	margin-bottom:15px;
+}
+
+#centerArticle article h1{
+	margin-bottom:10px;
+/*	text-decoration: overline;	*/
+}
+
+.whiteLink{
+	color:white;
+}
+
+.commentairesArticle{
+	margin-bottom:10px;	
+}
+
+.documentArticle{
+	margin-top:5px;
+	margin-bottom:5px;	
+}
+
+
+#partageArticle h1{
+	margin-bottom:10px;	
+	margin-top:25px;	
+}
+
+.aster{
+	color:#DE496C;
+}
+
+#planDeSite:hover{
+	text-decoration: underline;
+}
+
+#wrapSiteMap{
+	width:100%;
+	background-color:white;
+	height:1000px;	
+	display: block;
+/*	padding-top:50px;*/
+/*	padding-left:15px;*/
+	padding-bottom:70px;
+}
+
+#titreSiteMap{
+	padding-left:50px;
+	background-image: url("images/puceVerte.png");
+	background-repeat: no-repeat;
+	background-position: 20px 12px;
+	font-size: 2em;
+}
+
+#centerPage{
+	padding:15px;	
+}
+
+#centerPage h1{
+	margin-top:25px;
+}
+
+#centerPage h2{
+	font-size: 1.17em;
+	margin-top: 25px;
+}
+
+.floatCategorie{
+	float:right;
+	width:30%;
+}

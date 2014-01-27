@@ -1,0 +1,30 @@
+skill:
+    pattern:  /
+    defaults: { _controller: "ExodPortfolioBundle:Skill:index" }
+
+skill_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "ExodPortfolioBundle:Skill:show" }
+
+skill_new:
+    pattern:  /new
+    defaults: { _controller: "ExodPortfolioBundle:Skill:new" }
+
+skill_create:
+    pattern:  /create
+    defaults: { _controller: "ExodPortfolioBundle:Skill:create" }
+    requirements: { _method: post }
+
+skill_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "ExodPortfolioBundle:Skill:edit" }
+
+skill_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "ExodPortfolioBundle:Skill:update" }
+    requirements: { _method: post }
+
+skill_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "ExodPortfolioBundle:Skill:delete" }
+    requirements: { _method: post }

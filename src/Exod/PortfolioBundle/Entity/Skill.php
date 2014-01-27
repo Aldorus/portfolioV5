@@ -51,7 +51,7 @@ class Skill
      */
     public function getLabel()
     {
-        return $this->Label;
+        return $this->label;
     }
 
     /**

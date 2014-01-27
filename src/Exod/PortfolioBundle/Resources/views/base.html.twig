@@ -3,8 +3,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Exod - Portfolio</title>
-        
-        <link rel="stylesheet" href="{{ asset('style/style.css') }}" type="text/css" media="screen" />
+        <script type="text/javascript" src="{{ asset('bundles/exodportfolio/js/lib/tinymce/tinymce.min.js') }}"></script>
+        <script type="text/javascript">
+			tinymce.init({
+			    selector: "textarea"
+			 });
+		</script>
+        <link rel="stylesheet" href="{{ asset('bundles/exodportfolio/css/private.css') }}" type="text/css" media="screen" />
     </head>
     <body>
     <ul> 
@@ -14,13 +19,15 @@
 		<li><a href="{{ path('contenu') }}">Gestion des contenus</a></li>
 		<li><a href="{{ path('image') }}">Gestion des images</a></li>
 		<li><a href="{{ path('projet') }}">Gestion des projets</a></li>
-		<li><a href="{{ path('utilisateur') }}">Gestion des utilisateurs</a></li>
 		<li><a href="{{ path('actualite') }}">Gestion des actualit&eacute;s</a></li>
+		<li><a href="{{ path('skill') }}">Gestion des comp&eacute;tences</a></li>
 		<li><a href="{{ path('categorie') }}">Gestion des cat&eacute;gories</a></li>
 		<li><a href="{{ path('document') }}">Gestion des documents</a></li>
 		<li><a href="/logout">Logout</a></li>
 	</ul>
+	<div class="wrapper">
         {% block body %}
         {% endblock %}
+    </div>
     </body>
 </html>

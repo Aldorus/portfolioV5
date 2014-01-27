@@ -1,3 +1,5 @@
+{% extends 'ExodPortfolioBundle::base.html.twig' %}
+{% block body %}
 <h1>Categorie creation</h1>
 
 <form action="{{ path('categorie_create') }}" method="post" {{ form_enctype(form) }}>
@@ -14,3 +16,4 @@
         </a>
     </li>
 </ul>
+{% endblock %}

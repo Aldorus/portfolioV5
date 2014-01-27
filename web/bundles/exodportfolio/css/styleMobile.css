@@ -1,0 +1,168 @@
+@CHARSET "ISO-8859-1";
+*{
+	margin:0;
+	padding:0;
+}
+
+#pImage{
+	margin-left:150px;
+}
+
+body{
+	margin-left:10px;
+	margin-right:10px;
+	min-width:350px;
+	padding-bottom:15px;
+}
+#leftSection div{
+	display:none;
+}
+
+#leftSection .link {
+	display:block;
+	position:absolute;
+	top:0px;
+	margin:auto;
+}
+
+#leftSection .link h1{
+	margin-top:20px;
+	border-radius:2px;
+	background-color:#663F70;
+	padding:10px;
+	text-align:center;
+}
+#leftSection .link h1 a{
+	color:white;
+	text-decoration: none;	
+}
+#leftSection .link h1 a:hover{
+	text-decoration: underline;
+}
+
+#mainNav{
+	display:none;
+}
+
+#rightSection{
+	display:none;
+}
+
+#rightSection alignRight{
+	dispaly:block;
+}
+
+#wrapMaster img{
+	display:none;
+}
+#projetsEnCours h1, #derniereInfo h1, #projetsFinis h1{
+	border-radius:2px;
+	background-color:#663F70;
+	padding:10px;
+	text-align:center;	
+	color:white;	
+}
+#projetsEnCours h2,#projetsFinis h2{
+	font-size:14px;
+	border-radius:2px;
+	background-color:#49A837;
+	padding:10px;
+	text-align:center;	
+	margin-left:25px;
+	margin-right:25px;
+	margin-top:-10px;
+}
+#projetsEnCours h2 a,#projetsFinis h2 a{
+	color:white;	
+	text-decoration: none;
+}
+#projetsEnCours h2 a:hover,#projetsFinis h2 a:hover{
+	text-decoration: underline;
+}
+#derniereInfo h1,#projetsFinis h1{
+	margin-bottom:10px;
+}
+#derniereInfo{
+	margin-top:10px;
+	margin-bottom:10px;
+}
+#derniereInfo a{
+	color:#49A837;
+	text-decoration: none;	
+}
+#derniereInfo a:hover{
+	text-decoration: underline;	
+}
+
+/* PAGE CONTACT */
+#formulaireContact h1{
+	border-radius:2px;
+	background-color:#663F70;
+	padding:10px;
+	text-align:center;	
+	color:white;	
+	margin-bottom:10px;
+}
+#formulaireContact{
+	margin-bottom:35px;
+}
+form label{
+	display:block;
+}
+form input{
+	display:block;
+	width:95%;
+	height:30px;
+}
+form textarea{
+	height:50px;
+	width:95%;
+}
+.bouton{
+	border: 1px solid lightGrey;
+	background: #E6E6E6 url(images/?new=e6e6e6&w=1&h=400&f=png&q=100&fltr[]=over|textures/02_glass.png|0|0|75) 50% 50% repeat-x;
+	font-weight: normal;
+	color: #555;
+	padding: .4em 1em;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	height:50px;
+}
+.bouton:hover{
+	border: 1px solid #999;
+	background: #DADADA url(images/?new=dadada&w=1&h=400&f=png&q=100&fltr[]=over|textures/02_glass.png|0|0|75) 50% 50% repeat-x;
+	font-weight: normal;
+	color: #212121;
+}
+.articleImage{
+	display:none;
+}
+
+/*PAGE ARTICLE*/
+#partageArticle{
+	margin-top:10px;
+}
+#partageArticle h1{
+	border-radius:2px;
+	background-color:#663F70;
+	padding:10px;
+	text-align:center;	
+	color:white;
+	margin-bottom:10px;
+}
+
+#centerArticle #titreArticle{
+	border-radius:2px;
+	background-color:#663F70;
+	padding:10px;
+	text-align:center;	
+	color:white;
+	margin-bottom:10px;
+}
+#centerArticle article{
+	margin-bottom:15px;
+}
+
+#centerArticle article h1{
+	color:#49A837;
+}
