@@ -1,4 +1,48 @@
 @CHARSET "ISO-8859-1";
+ul{
+	float:left;	
+}
+
+.clear{
+	clear: both;
+}
+
+.wrapper{
+	width: 60%;
+	margin-left: 20%;
+}
+
 textarea {
-	width: 50%;
+	height: 300px;
+}
+
+h1{
+	color: #310563;
+}
+
+li{
+	list-style-type: none;	
+}
+
+a{
+	color: black;
+	text-decoration: none;
+	font-size: 1.2em;	
+}
+
+a:hover{
+	color: #7A063E;	
+	text-decoration: underline;
+}
+
+table{
+	width: 100%;
+}
+
+table thead{
+	width:100%;
+	border-bottom: 2px solid black;
+}
+table thead tr th{
+	margin: 0;
 }
