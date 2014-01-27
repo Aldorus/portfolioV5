@@ -2,6 +2,8 @@
 
 namespace Exod\PortfolioBundle\Controller;
 
+use Symfony\Component\HttpFoundation\Response;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Exod\PortfolioBundle\Entity\Skill;
